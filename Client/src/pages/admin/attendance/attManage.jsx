@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Sidebar from "../../../component/Sidebar/Sidebar";
+import Sidebar from "../../../component/Sidebar/sidebar";
 import { getAllAttendanceAPI } from "../../../service/api";
 
 // ── React Icons ───────────────────────────────────────────────────────────────

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Sidebar from "../../../component/Sidebar/Sidebar";
+import Sidebar from "../../../component/Sidebar/sidebar";
 import { useAuth } from "../../../context/AuthContext";
 import {
   getMyAttendanceAPI,
