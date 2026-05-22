@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Sidebar from "../../../component/Sidebar/sidebar";
+import Sidebar from "../../../component/sidebar/sidebar";
 import {
   getEmployeeStatsAPI,
   getTodaySummaryAPI,

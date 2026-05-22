@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import Sidebar from "../../../component/Sidebar/sidebar";
+import Sidebar from "../../../component/sidebar/sidebar";
 import {
   getAllEmployeesAPI,
   addEmployeeAPI,

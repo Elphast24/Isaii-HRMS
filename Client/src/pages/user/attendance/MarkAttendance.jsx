@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Sidebar from "../../../component/Sidebar/sidebar";
+import Sidebar from "../../../component/sidebar/sidebar";
 import { markAttendanceAPI, getMyAttendanceAPI } from "../../../service/api";
 import "../../admin/dashboard/adminDash.css";
 import "./markAttendance.css";

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Sidebar from "../../../component/Sidebar/sidebar";
+import Sidebar from "../../../component/sidebar/sidebar";
 import { applyLeaveAPI, getMyLeavesAPI } from "../../../service/api";
 
 // ── React Icons ───────────────────────────────────────────────────────────────
