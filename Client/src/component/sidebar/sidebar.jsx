@@ -20,7 +20,7 @@ import { BsPersonCheck, BsShieldCheck } from "react-icons/bs";
 import { RiLeafLine, RiTimeLine } from "react-icons/ri";
 import { TbLayoutDashboard } from "react-icons/tb";
 
-import "./Sidebar.css";
+import "./sidebar.css";
 
 const Sidebar = () => {
   const { user, logout } = useAuth();
