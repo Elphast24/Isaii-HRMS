@@ -8,7 +8,7 @@ import LeaveManagement from "./pages/admin/leaves/leaveManage";
 import EmployeeDashboard from "./pages/user/dashboard/empDashboard";
 import EmployeeAttendance from "./pages/user/attendance/empAttendance";
 import EmployeeLeaves from "./pages/user/leaves/ApplyLeave";
-import ProtectedRoute from "./component/ProtectedRoute";
+import ProtectedRoute from "./component/protectedRoute";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 
