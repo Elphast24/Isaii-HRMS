@@ -1,0 +1,567 @@
+/* ── Layout ────────────────────────────────────────────────────────────────── */
+.ad-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f1f5f9;
+}
+
+.ad-main {
+  flex: 1;
+  margin-left: 260px;
+  padding: 28px 32px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Loader ────────────────────────────────────────────────────────────────── */
+.ad-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 16px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.ad-loader-ring {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #f16363;
+  border-radius: 50%;
+  animation: adSpin 0.7s linear infinite;
+}
+
+@keyframes adSpin { to { transform: rotate(360deg); } }
+
+/* ── Top Bar ───────────────────────────────────────────────────────────────── */
+.ad-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.ad-greeting-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(99,102,241,.12), rgba(139,92,246,.12));
+  color: #f16363;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  border: 1px solid rgba(99,102,241,.2);
+}
+
+.ad-greeting h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.ad-name {
+  background: linear-gradient(135deg, #f16363, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ad-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748b;
+  font-size: 13px;
+  margin: 0;
+}
+
+.ad-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ad-last-updated {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #94a3b8;
+  font-size: 12px;
+  background: #fff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.ad-refresh-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  color: #f16363;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ad-refresh-btn:hover { background: #eff6ff; border-color: #f16363; }
+.ad-refresh-btn.spinning svg { animation: adSpin 0.7s linear infinite; }
+
+/* ── Stat Cards ────────────────────────────────────────────────────────────── */
+.ad-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.stat-card-new {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: default;
+}
+
+.stat-card-new:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.10);
+}
+
+.stat-card-inner { position: relative; z-index: 1; }
+
+.stat-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.stat-icon-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+}
+
+.stat-trend {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.stat-trend.up   { background: #f0fdf4; color: #16a34a; }
+.stat-trend.down { background: #fef2f2; color: #dc2626; }
+.stat-trend.down svg { transform: rotate(90deg); }
+
+.stat-num {
+  font-size: 34px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+  margin: 0 0 4px;
+  letter-spacing: -1px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 600;
+  margin: 0 0 5px;
+}
+
+.stat-sub {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* Subtle glow blob */
+.stat-card-glow {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  opacity: 0.07;
+  z-index: 0;
+}
+
+/* ── Content Grid ──────────────────────────────────────────────────────────── */
+.ad-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 20px;
+  align-items: start;
+}
+
+.ad-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Generic Card ──────────────────────────────────────────────────────────── */
+.ad-card {
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  overflow: hidden;
+}
+
+/* ── Card Header ───────────────────────────────────────────────────────────── */
+.ad-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 22px 0;
+  margin-bottom: 18px;
+}
+
+.ad-card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ad-card-title-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, rgba(99,102,241,.1), rgba(139,92,246,.1));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ad-card-title h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 2px;
+}
+
+.ad-card-title p {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.ad-view-all {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f16363;
+  text-decoration: none;
+  padding: 6px 12px;
+  background: rgba(99,102,241,.08);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.ad-view-all:hover {
+  background: rgba(99,102,241,.15);
+  transform: translateX(2px);
+}
+
+/* ── Empty State ───────────────────────────────────────────────────────────── */
+.ad-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 24px;
+  text-align: center;
+  gap: 8px;
+}
+
+.ad-empty-icon {
+  width: 64px;
+  height: 64px;
+  background: #f8fafc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.ad-empty p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin: 0;
+}
+
+.ad-empty span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ── Leave List ────────────────────────────────────────────────────────────── */
+.ad-leave-list {
+  padding: 0 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ad-leave-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  transition: background 0.15s;
+  cursor: default;
+}
+
+.ad-leave-row:hover { background: #f8fafc; }
+
+.ad-leave-index {
+  font-size: 11px;
+  font-weight: 700;
+  color: #cbd5e1;
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.ad-leave-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f16363, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(99,102,241,.3);
+}
+
+.ad-leave-info { flex: 1; min-width: 0; }
+
+.ad-leave-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ad-leave-dept {
+  font-size: 11px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.ad-leave-type {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.ad-leave-days {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ad-leave-range {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Status Badges ─────────────────────────────────────────────────────────── */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.badge-pending  { background: #fef3c7; color: #d97706; }
+.badge-approved { background: #d1fae5; color: #059669; }
+.badge-rejected { background: #fee2e2; color: #dc2626; }
+
+/* ── Summary List ──────────────────────────────────────────────────────────── */
+.ad-summary-list {
+  padding: 0 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ad-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: background 0.15s;
+}
+
+.ad-summary-row:hover { background: #f8fafc; }
+
+.ad-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ad-summary-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ad-summary-label {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.ad-summary-value {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* ── Attendance Rate Card ──────────────────────────────────────────────────── */
+.ad-rate-body {
+  padding: 4px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.ad-donut-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-donut-center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ad-donut-pct {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.ad-donut-sub {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.ad-rate-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.ad-rate-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ad-rate-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ad-rate-leg-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.ad-rate-leg-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+@media (max-width: 1280px) {
+  .ad-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .ad-content-grid { grid-template-columns: 1fr; }
+  .ad-right-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+}
+
+@media (max-width: 900px) {
+  .ad-main { margin-left: 0; padding: 16px; }
+  .ad-right-col { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .ad-stats-grid { grid-template-columns: 1fr; }
+  .ad-leave-range, .ad-leave-days { display: none; }
+  .ad-greeting h1 { font-size: 20px; }
+}

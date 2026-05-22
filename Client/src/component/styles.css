@@ -1,0 +1,144 @@
+/* General Styles */
+*{
+  font-family: 'Inter';
+}
+
+body {
+    width: 100%;
+    /* font-family: Arial, sans-serif; */
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Login Container */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .login-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* width: 350px; */
+    text-align: center;
+  }
+  
+  /* Titles */
+  .login-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Input Fields */
+  .input-field {
+    width: 80%;
+    height: 3vh;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #15dcb8;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  /* Buttons */
+  .login-button {
+    width: 25%;
+    height: 5vh;
+    padding: 10px;
+    background: #15dcb8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-button:hover {
+    background: #0056b3;
+  }
+  
+  .google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    background: #f4f4f4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .google-button:hover {
+    background: #e0e0e0;
+  }
+  
+  .google-icon {
+    margin-right: 10px;
+  }
+  
+  /* Forgot Password */
+  .forgot-password {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .forgot-password a {
+    color: #15dcb8;
+    text-decoration: none;
+  }
+  
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Error Message */
+  .error-text {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .l-login-box>img{
+    width: 100%;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    /* .l-login-box>img{
+      width: 35vh;
+    } */
+  }
+
+  @media screen  and (max-width: 425px){
+    .login-box{
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    /* .l-login-box>img{
+      width: 35vh;
+    } */
+  }
+
+  @media screen and (max-width: 320px) {
+    /* .l-login-box>img{
+      width: 28vh;
+    } */
+  }
