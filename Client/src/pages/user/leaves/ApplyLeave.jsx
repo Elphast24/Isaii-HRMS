@@ -29,7 +29,7 @@ import {
 import { RiLeafLine } from "react-icons/ri";
 import { FiArrowRight, FiSend } from "react-icons/fi";
 
-import "./applyLeave.css";
+import "./ApplyLeave.css";
 
 const INITIAL = { leaveType: "", startDate: "", endDate: "", reason: "" };
 
